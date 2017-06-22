@@ -1,4 +1,4 @@
-# platespace Stitch Sample Web Application
+# PlateSpace Stitch Sample Web Application
 
 ## Requirements
 
@@ -20,10 +20,10 @@ It demonstrates how to use MongoDB Stitch as a backend-as-a-service and the Mong
 * You might be prompted to create a New Group Name. Enter any name, such as __Stitch Clusters__.
 * Build a new cluster (such as *Stitch-Demo*) if you don't have one yet.
 * If this is the first cluster in your Atlas group, scroll down to the bottom of the screen and set up the first cluster admin's username and password.
-* Once your cluster has been created, navigate to the __ETL/restore__ folder and read the [README file](/ETL/restore/README.md) to restore the data set this application requires to your MongoDB Atlas cluster.
+* Once your cluster has been created, navigate to the __ETL/restore__ folder and read the [README file](../ETL/restore/README.md) to restore the data set this application requires to your MongoDB Atlas cluster.
 * Select __Stitch Apps__ in the left navigation menu.
 * Press the __Create New Application__ button and name your application `platespace` (or any other name you wish). In the __Link to Cluster__ section, select the cluster name you just selected.
-* Once your Stitch app has been created, you should be redirected to the Stitch Console at https://stitch.mongodb.com
+* Once your Stitch app has been created, you should be redirected to the Stitch Console at [https://stitch.mongodb.com](https://stitch.mongodb.com).
 
 In order to get our Stitch backend-as-a-service application fully set up, we must go through the following configuration steps:
 
@@ -378,12 +378,9 @@ You will use these users to connect to the application.
 
 #### Amazon Web Service configuration
 
-Find your keypair information in `Web/temp-key-aws.txt`
-Your pre-created bucket for this tutorial is named `platespace-demo`
+The application uploads images to an S3 bucket so you will an AWS account if you want to add an image while adding or updating a restaurant review.
 
-For today we've provided you a keypair and a bucket for your images.  If you were to create this on your own you would:
-
-* Sign in to your AWS account
+* Sign in (or sign up) to your AWS account at [https://aws.amazon.com](https://aws.amazon.com).
 * Navigate to the IAM->Users section
 * Add a user (for instance `s3.stitchuser`) with `Programmatic access` as the access type
 * Press `Next:Permissions`, select `Attach existing policies directly` and select the `AmazonS3FullAccess`  policy
@@ -412,7 +409,7 @@ For today we've provided you a keypair and a bucket for your images.  If you wer
 
 The first step is to retrieve a valid Bearer token from Clarifai.
 
-* To do so, navigate to https://developer.clarifai.com/signup and sign up to create a Clarifai account.
+* To do so, sign up for an account at the [Clarifai Developers](https://developer.clarifai.com/signup) website.
 * After you sign in on Clarifai's developer portal, click on your name at the top.
 * In __Applications__, select *My First Application* and update its name.
 * Scroll down and in the __Access Tokens__ section, press the __Generate Access Token__ button.
@@ -456,7 +453,7 @@ Select the __Pipelines__ link in the left-hand menu add press the `New` button. 
     "url": "https://api.clarifai.com/v2/models/aaa03c23b3724a16a56b629203edc62c/outputs",
     "headers": {
       "Authorization": [
-        "Bearer mqE59AWPDOoHwRMtXFHWxmhuLBS9oE"
+        "Bearer [YOUR_CLARIFAI_BEARER_TOKEN]"
       ]
     },
     "body": {
@@ -472,7 +469,7 @@ Select the __Pipelines__ link in the left-hand menu add press the `New` button. 
     }
   }
   ```
-  __Important note__: You should update the `NhDj1HG5bqC9SEhhvr0GC8qFN6Znc1` value above with your own Clarifai Access Token.
+  __Important note__: You should update the `YOUR_CLARIFAI_BEARER_TOKEN` placeholder above with your own Clarifai Access Token.
 * __Bind data to %%vars__:
  ```json
   {
