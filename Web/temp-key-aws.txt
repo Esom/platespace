@@ -1,2 +1,0 @@
-AWS AccessKey = 'AKIAI55OROPKT3CZNQ7Q'
-AWS SecretKey = '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'
