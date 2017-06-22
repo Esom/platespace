@@ -4,7 +4,7 @@
 
 In order to properly run this app on your local MacBook Pro or Linux machine, you need:
 
-* MongoDB 3.4.1 or above (required to restore the app sample dataset)
+* MongoDB 3.4.4 or above (required to restore the app sample dataset)
 * Node.js v6 or above
 * NPM v4.6.1 or above
 * Firefox 47 or above, Safari 10 or above (default on MacOS Sierra), Chrome 58 or above
