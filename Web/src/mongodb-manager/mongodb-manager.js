@@ -290,7 +290,6 @@ function getUserId() {
 }
 
 function getUserName() {
-
   return stitchClient.userProfile()
     .then(profile => 
     profile.data.name ? profile.data.name : profile.data.email);

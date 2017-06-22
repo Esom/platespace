@@ -10,7 +10,6 @@ import StyledDialog from "../styled-dialog";
 
 const config = require("../../../config.js");
 
-const bucket = config.S3_BUCKET;
 const stitchClient = new StitchClient(config.STITCH_APP_ID, {baseUrl: config.STITCH_ENDPOINT });
 
 class ReviewDialog extends Component {
@@ -78,7 +77,7 @@ class ReviewDialog extends Component {
       const s3 = stitchClient.service('aws/s3', config.S3_SERVICE_NAME);
       const putPromise = stitchClient.executePipeline([
         builtins.binary('base64', fileData),
-          s3.put(bucket, fileKey, "public-read", fileContentType)]);
+          s3.put(config.S3_BUCKET, fileKey, "public-read", fileContentType)]);
           
         putPromise.then(res => {
           console.log("AWS S3 url: ", res.result[0].location);
