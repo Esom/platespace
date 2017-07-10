@@ -1,0 +1,1 @@
+This repository has moved to the [MongoDB Stitch Examples](https://github.com/mongodb/stitch-examples/tree/master/PlateSpace/Web) repository.
